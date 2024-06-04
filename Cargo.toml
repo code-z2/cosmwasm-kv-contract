@@ -1,0 +1,24 @@
+[package]
+name = "kv-store-contract"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+cosmwasm-schema = "2.0.4"
+cosmwasm-std = "2.0.4"
+cw-multi-test = { version = "2.0.1", optional = true }
+cw-storage-plus = "2.0.0"
+schemars = "0.8.21"
+serde = { version = "1.0.203", features = ["derive"] }
+thiserror = "1.0.61"
+
+[dev-dependencies]
+cw-multi-test = "2.0.1"
+
+[features]
+library = []
+tests = ["library", "cw-multi-test"]
+
